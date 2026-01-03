@@ -4,7 +4,6 @@
 A data analytics tool that analyzes the risk profile of major Fintech stocks (PayPal, Visa, Square, Coinbase). This project calculates **Log Returns** and **Annualized Rolling Volatility** to identify market stress periods.
 
 ## Key Visualizations:
-![Volatility Comparison Chart](Figure_1.webp)
 *Figure 1: Comparison of 21-Day Rolling Volatility across major Fintech assets.*
 
 ## Tech Stack:
