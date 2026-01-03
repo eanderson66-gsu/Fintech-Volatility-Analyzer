@@ -3,12 +3,13 @@
 #Import Functions
 from data_fetcher import finance_data_fetch
 from analyzer import volatility_calculator
+from visualizer import plot_comparison
 
 #Test running multiple Stocks
 stocks = "SPY NVDA GOOG AMZN PYPL".split()
 
 #Create a dictionary to hold results
-data = {}
+data_results = {}
 
 #Parse through each symbol/stock
 for symbol in stocks:
@@ -19,11 +20,11 @@ for symbol in stocks:
         analyzed_df = volatility_calculator(raw_df)
 
         #Store in dictionary
-        data[symbol] = analyzed_df
+        data_results[symbol] = analyzed_df
 
     except Exception as e:
         print("Could not process {symbol:} {e}")
 
-for symbol, df in data.items():
-    volatility = df['Volatility'].iloc[-1]
-    print(f"{symbol}: {volatility:.2%}")
+#To Visualize each Chart
+print("Generating chart...")
+plot_comparison(data_results)
