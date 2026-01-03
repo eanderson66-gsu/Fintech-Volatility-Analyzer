@@ -1,7 +1,7 @@
 import numpy as np
 
 #Step 1: Create a function to calculate Log returns
-def volatility_calculator(df, window = 12):
+def volatility_calculator(df, window = 21):
     #Step 2: Utilize np.log to handle the vector math per column
     df['Log_Return'] = np.log(df['Close'] / df['Close'].shift(1))
 
